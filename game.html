@@ -14,8 +14,7 @@
       margin:0 auto;
     }
     .character{transition: all 0.1s}
-    .character:hover{    -webkit-filter:     -webkit-filter: opacity(.5);
-    filter: opacity(.5);}
+    .character:hover{-webkit-filter: opacity(.5);filter: opacity(.5);}
     .character {
       background: url('gameimg/iron.jpg');
       background-size: cover;
@@ -26,12 +25,10 @@
       float: left;
       display: none;
     }
-    .thief:hover{    -webkit-filter: opacity(.5);
-    filter: opacity(.5);}
+    .thief:hover{-webkit-filter: opacity(.5);filter: opacity(.5);}
     .thief {
       background: url('gameimg/ta.jpg');
       background-size: cover;
-
     }
     .hidden {
       display: none;
@@ -39,17 +36,20 @@
     .visible{
       display: block;
     }
+
     h2{margin:100px 800px;color:#fff;font-size:2.5em;}
     h2{border: width 10px}
     h2{border-style: solid;bord}
     a{margin:100px 800px;color:#fff;font-size:2.5em;}
     a{border: width 10px}
     a{border-style: solid;bord}
+
+    .ha {margin:20px 850px;;font-size:2.5em;}
   </style>
 
 </head>
 <body>
-  <input type="button" value="StartGame!" onclick="startGame()";/>
+  <input class="ha"type="button" value="StartGame!" onclick="startGame()" />
   <div id="board">
     <div class="character">1</div>
     <div class="character">2</div>
@@ -58,6 +58,11 @@
     <div class="character">5</div>
     <div class="character">6</div>
   </div>
+
+  <a href="gameh.html">난이도:쉬움</a>
+  <a href="game.html">다시 하기</a>
+  <h2><p>게임규칙</p><p>1.'StartGame'을 클릭</p><p>2.타노스를 누르면 +1,아이언맨은 -2</p></h2>
+
   <script>
     function startGame() {
       gameLoop();
@@ -70,10 +75,10 @@
       createCharacters();
       loops++;
       if (loops < 12) {
-        setTimeout(gameLoop, peopleVisible ? 1000 : 3000);
+        setTimeout(gameLoop, peopleVisible ? 1000 : 1);
       }
       else {
-        alert("you scored" + gameScore);
+        alert("당신의 점수:" + gameScore);
       }
     }
     function createCharacters() {
@@ -94,8 +99,6 @@
       board.children[randomNumber-1].className = classToSet = "character thief visible";
     }
   </script>
-  <a href="file:///D:/web/gameh.html">난이도:쉬움</a>
-  <a href="file:///D:/web/game.html">다시 하기</a>
-  <h2><p>게임규칙</p><p>1.'StartGame'을 클릭</p><p>2.타노스를 누르면 +1,아이언맨은 -2</p><p>3.다시하려면 페이지 F5키를 누르기</p></h2>
+
 </body>
 </html>
